@@ -1,0 +1,47 @@
+
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head> 
+    <meta charset="utf-8" /> 
+ 
+    <script type="text/javascript" src="simple2d.js"></script>
+
+    <title>simple2d demo</title> 
+ 
+    <style type="text/css"> 
+
+    </style> 
+ 
+  </head> 
+  
+  <body> 
+    <script type="text/javascript">
+      var s2d = simple2d;
+      var p1 = new s2d.Point(3,1);
+      var p2 = new s2d.Point(6,5);
+      var s = 6.2 ;
+
+      console.log ( "simple2d.Points ") ; 
+      console.log("    " + p1 + " + " + p2 + " = " + p1.add(p2) ) ;
+      console.log("    " + p1 + " - " + p2 + " = " + p1.sub(p2) ) ;
+      console.log("    " + p1 + " * " + s + " = " + p1.mult(s) ) ;
+      console.log("    " + p1 + " / " + s + " = " + p1.div(s) ) ;
+      console.log("    " + "-" + p1 + " = " + p1.neg() ) ;
+      console.log("    " + "magintude " + p1 + "= " + p1.magnitude() ) ;
+      console.log("    " + "distance between " + p1 + " and " + p2 + " = " + p1.distance(p2) ) ;
+      console.log("    " + "normalised vector " + p1 + " = " + p1.normalise() ) ;
+      console.log("    " + p1 +" scaled by 2,5 = " + p1.scale(2,5) ) ;
+
+
+
+      console.log( "simple2d.Transform" ) ;
+      console.log( "    " + "Identity: " + s2d.IDENTITY) ;
+      //finish this some time...
+
+      console.log("remember to define Points and Transforms as 'new' object");
+      console.log("  GOOD: 'var a = new Point(1,2);'");
+      console.log("  BAD:  'var a = Point(1,2);' ");
+      var p3 = s2d.Point(1,2);
+    </script>
+
+  </body>
