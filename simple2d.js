@@ -26,6 +26,10 @@ simple2d.Point = function (x, y) {
         return new simple2d.Point(this.x + p2.x, this.y + p2.y);
     };
 
+    this.clone = function () {
+        return new simple2d.Point(this.x, this.y);
+    }
+
     this.sub = function (p2) {
         return new simple2d.Point(this.x - p2.x, this.y - p2.y);
     };
@@ -138,16 +142,27 @@ simple2d.Transform = function(a, b, c, d, e, f) {
     };
 
     this.invert = function() {
-        var det = this.m[0] * this.m[4] - this.m[1] * this.m[3];
-        return simple2d.Transform(
-            this.m[4] / det,
+        var det = this.m[0] * this.m[3] - this.m[2] * this.m[1];
+        return new simple2d.Transform(
+            this.m[3] / det,
             -this.m[1] / det,
-            (this.m[1] * this.m[5] - this.m[2] * this.m[4]) / det,
-            -this.m[3] / det,
+            -this.m[2] / det,
             this.m[0] / det,
-            (this.m[2] * this.m[3] - this.m[0] * this.m[5]) / det
+            (this.m[2] * this.m[5] - this.m[4] * this.m[3]) / det,
+            (this.m[4] * this.m[1] - this.m[0] * this.m[5]) / det
         );
     };
+
+    this.clone = function() {
+        return new simple2d.Transform(
+            this.m[0],
+            this.m[1],
+            this.m[2],
+            this.m[3],
+            this.m[4],
+            this.m[5]
+        ) ;
+    }
 
     this.toString = function() {
         return "Transform[" + this.m + "]";
