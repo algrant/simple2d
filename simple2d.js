@@ -231,6 +231,8 @@ simple2d.centroid = function (p1, p2, p3, p4) {
 module.exports = {  Point:simple2d.Point,
                     Transform:simple2d.Transform,
                     IDENTITY:simple2d.IDENTITY,
+                    rotate:simple2d.rotate,
+                    translate:simple2d.translate,
                     reflect:simple2d.reflect,
                     rotateAround:simple2d.rotateAround,
                     angleBetween:simple2d.angleBetween,
