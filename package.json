@@ -1,0 +1,24 @@
+{
+  "name": "simple2d-geometry",
+  "version": "1.0.0",
+  "description": "Module to create simple Point objects (x,y) which can do all standard vector arithmetic, as well as use transformation matrices.",
+  "main": "simple2d.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/algrant/simple2d.git"
+  },
+  "keywords": [
+    "geometry",
+    "2d",
+    "vector"
+  ],
+  "author": "Al Grant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/algrant/simple2d/issues"
+  },
+  "homepage": "https://github.com/algrant/simple2d#readme"
+}
