@@ -10,7 +10,7 @@
  * http://www.cgl.uwaterloo.ca/~csk/projects/escherization/geo.py.txt
  */
 
-var  simple2d = {};
+var simple2d = {};
 
 simple2d.Point = function (x, y) {
     "use strict";
@@ -169,7 +169,9 @@ simple2d.Transform = function(a, b, c, d, e, f) {
     };
 };
 
-simple2d.IDENTITY = new simple2d.Transform(1.0, 0.0, 0.0, 1.0, 0.0, 0.0);
+simple2d.IDENTITY = function() {
+    return new simple2d.Transform(1.0, 0.0, 0.0, 1.0, 0.0, 0.0);
+};
 
 simple2d.translate = function (x, y) {
     "use strict";
@@ -226,4 +228,11 @@ simple2d.centroid = function (p1, p2, p3, p4) {
     return new simple2d.Point((p1.x + p2.x + p3.x + p4.x) / 4, (p1.y + p2.y + p3.y + p4.y) / 4);
 };
 
-exports.simple2d = simple2d;
+module.exports = {  Point:simple2d.Point,
+                    Transform:simple2d.Transform,
+                    IDENTITY:simple2d.IDENTITY,
+                    reflect:simple2d.reflect,
+                    rotateAround:simple2d.rotateAround,
+                    angleBetween:simple2d.angleBetween,
+                    linescross:simple2d.linescross,
+                    centroid:simple2d.centroid };
